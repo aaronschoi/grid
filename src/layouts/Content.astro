@@ -1,0 +1,51 @@
+---
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description }: Props = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <h1 transition:name="title" transition:animate="fade">CSS Grid</h1>
+      {title}
+    </header>
+    <slot />
+    <footer>{title}</footer>
+    <style lang="scss" is:global></style>
+  </body>
+</html>
+<style lang="scss" is:global>
+  @font-face {
+    font-family: "Righteous";
+    src: url("/fonts/Righteous-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  h1 {
+    font-family: "Righteous", sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  header {
+    display: flex;
+  }
+</style>

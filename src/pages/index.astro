@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Landing.astro";
+---
+
+<Layout title="Grid">
+  <main transition:name="main" transition:animate="slide">
+    <h1 transition:name="title" transition:animate="fade">CSS Grid</h1>
+    <a href="/rows">Rows</a>
+  </main>
+</Layout>
+<style lang="scss">
+  h1 {
+    font-family: "Righteous", sans-serif;
+    font-size: 10rem;
+    margin: 0;
+  }
+</style>
