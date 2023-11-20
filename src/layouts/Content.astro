@@ -22,31 +22,36 @@ const { title, description }: Props = Astro.props;
   </head>
   <body>
     <header>
-      <h1 transition:name="title" transition:animate="fade">CSS Grid</h1>
+      <a href="/"
+        ><h1 transition:name="title" transition:animate="fade">CSS Grid</h1></a
+      >
       {title}
     </header>
     <slot />
     <footer>{title}</footer>
     <style lang="scss" is:global></style>
-  </body>
+  </body><style lang="scss" is:global>
+    @use "../scss/colors" as colors;
+    @font-face {
+      font-family: "Righteous";
+      src: url("/fonts/Righteous-Regular.ttf") format("truetype");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    body {
+      background-color: colors.$mindaro;
+    }
+    h1 {
+      font-family: "Righteous", sans-serif;
+      font-size: 2rem;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      display: flex;
+      gap: 1rem;
+    }
+  </style>
 </html>
-<style lang="scss" is:global>
-  @font-face {
-    font-family: "Righteous";
-    src: url("/fonts/Righteous-Regular.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
-  h1 {
-    font-family: "Righteous", sans-serif;
-    font-size: 2rem;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  header {
-    display: flex;
-    gap: 1rem;
-  }
-</style>

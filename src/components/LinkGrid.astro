@@ -1,0 +1,142 @@
+---
+
+---
+
+<nav>
+  <ul>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/rows"><span>Rows</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+    <li>
+      <a href="/"><span>Home</span></a>
+    </li>
+  </ul>
+</nav>
+<style lang="scss">
+  @use "../scss/colors" as colors;
+
+  ul {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+    list-style-type: none;
+    margin: 0;
+    padding: 1rem;
+    gap: 1rem;
+
+    li {
+      display: flex;
+      height: 4rem;
+
+      a {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: colors.$night;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        color: colors.$night;
+        transition: color 0.35s ease-in-out;
+        border-radius: 2px;
+
+        span {
+          z-index: 1;
+        }
+        
+        &:link {
+          &:before {
+            content: "👀";
+            position: absolute;
+            padding: 0.25rem;
+            top: 0;
+            right: 0;
+          }
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: block;
+          transition: scale 0.35s ease-in-out;
+          border-radius: 50%;
+          width: 200%;
+          aspect-ratio: 1;
+          background-color: colors.$mindaro;
+        }
+
+        &:hover,
+        &:focus {
+          color: colors.$mindaro;
+          &:after {
+            scale: 0;
+          }
+        }
+
+        &:visited {
+          &:before {
+            content: "✅";
+          }
+        }
+      }
+    }
+  }
+</style>

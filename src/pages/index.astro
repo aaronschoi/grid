@@ -1,13 +1,15 @@
 ---
+import LinkGrid from "@components/LinkGrid.astro";
 import Layout from "../layouts/Landing.astro";
 ---
 
 <Layout title="Grid">
   <main transition:name="main" transition:animate="slide">
     <h1 transition:name="title" transition:animate="fade">CSS Grid</h1>
-    <a href="/rows">Rows</a>
+    <LinkGrid />
   </main>
 </Layout>
+
 <style lang="scss">
   h1 {
     font-family: "Righteous", sans-serif;
